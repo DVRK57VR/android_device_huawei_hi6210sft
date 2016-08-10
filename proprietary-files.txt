@@ -1,0 +1,7 @@
+# Chrome
+lib/libwebviewchromium.so
+lib/libwebviewchromium_loader.so
+lib/libwebviewchromium_plat_support.so
+lib64/libwebviewchromium.so
+lib64/libwebviewchromium_loader.so
+lib64/libwebviewchromium_plat_support.so
