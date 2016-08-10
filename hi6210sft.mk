@@ -6,9 +6,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 PRODUCT_AAPT_CONFIG := xhdpi hdpi normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# APN Long List
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # Blobs
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 PRODUCT_RESTRICT_VENDOR_FILES := false
+
+# Boot
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/isp.bin:system/isp.bin \
+        $(LOCAL_PATH)/rootdir/ons.bin:system/ons.bin \
+        $(LOCAL_PATH)/rootdir/phone.prop:system/phone.prop \
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -90,6 +100,32 @@ PRODUCT_COPY_FILES += \
     	frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
+
+# RIL
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/lib/libbalong_audio_ril.so:system/lib/ \
+        $(LOCAL_PATH)/rootdir/lib/libbalong-ril.so:system/lib/libbalong-ril.so \
+        $(LOCAL_PATH)/rootdir/lib/libbalong-ril-1.so:system/lib/libbalong-ril-1.so \
+        $(LOCAL_PATH)/rootdir/lib64/libbalong_audio_ril.so:system/lib64/ \
+        $(LOCAL_PATH)/rootdir/lib64/libbalong-ril.so:system/lib64/libbalong-ril.so \
+        $(LOCAL_PATH)/rootdir/lib64/libbalong-ril-1.so:system/lib64/libbalong-ril-1.so \
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    	audioril.lib=libbalong_audio_ril.so \
+	rild.libargs1=-m modem0 \
+	rild.libpath=/system/lib/libbalong-ril.so \
+	rild.libpath1=/system/lib/libbalong-ril.so \
+	rild.libpath2=/system/lib64/libbalong-ril-1.so \
+	rild.rild1_ready_to_start=false \
+    	ro.telephony.ril_class=HuaweiRIL
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.dsds.enabled=true \
+	ro.config.dsds_mode=umts_gsm \
+	ro.config.hw_dsda=true \
+    	ro.telephony.default_network=4 \
+    	telephony.lteOnCdmaDevice=0 \
+    	telephony.lteOnGsmDevice=1 
 
 # Ramdisk
 PRODUCT_COPY_FILES += \

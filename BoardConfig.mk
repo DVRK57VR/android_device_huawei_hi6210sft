@@ -89,5 +89,8 @@ RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_FSTAB := device/huawei/hi6210sft/ramdisk/fstab.hi6210sft
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
+# RIL
+BOARD_RIL_CLASS := ../../../device/huawei/hi6210sft/ril/
+
 # UserIMAGES
 TARGET_USES_HISI_DTIMAGE := true
