@@ -49,6 +49,10 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# Launcher
+PRODUCT_PACKAGES += \
+ 	Launcher3 \
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/huawei/alice/overlay
 
