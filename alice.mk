@@ -10,6 +10,10 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+# Charger
+PRODUCT_PACKAGES += \
+ 	charger_res_images
+
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
