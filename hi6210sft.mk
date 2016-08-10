@@ -55,7 +55,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/huawei/alice/kernel
+	LOCAL_KERNEL := device/huawei/hi6210sft/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
  	Launcher3 \
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += device/huawei/alice/overlay
+DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -149,5 +149,5 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.zygote=zygote64_32
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_alice
-PRODUCT_DEVICE := alice
+PRODUCT_NAME := full_hi6210sft
+PRODUCT_DEVICE := hi6210sft

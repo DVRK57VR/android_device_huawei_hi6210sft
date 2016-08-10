@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    	$(LOCAL_DIR)/alice.mk
+    	$(LOCAL_DIR)/hi6210sft.mk
