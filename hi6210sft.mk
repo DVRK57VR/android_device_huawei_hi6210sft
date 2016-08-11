@@ -86,11 +86,11 @@ PRODUCT_PACKAGES += \
 # Graphics
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/mali/lib/egl/libGLES_mali.so:system/lib/egl/libGLES_mali.so \
-        $(LOCAL_PATH)/mali/lib/hw/gralloc.hi6210sft.so:system/lib/egl/gralloc.hi6210sft.so \
-        $(LOCAL_PATH)/mali/lib/libion.so:system/lib/egl/libion.so \
+        $(LOCAL_PATH)/mali/lib/hw/gralloc.hi6210sft.so:system/lib/hw/gralloc.hi6210sft.so \
+        $(LOCAL_PATH)/mali/lib/libion.so:system/lib/libion.so \
         $(LOCAL_PATH)/mali/lib64/egl/libGLES_mali.so:system/lib64/egl/libGLES_mali.so \
-        $(LOCAL_PATH)/mali/lib64/hw/gralloc.hi6210sft.so:system/lib64/egl/gralloc.hi6210sft.so \
-        $(LOCAL_PATH)/mali/lib64/libion.so:system/lib64/egl/libion.so \
+        $(LOCAL_PATH)/mali/lib64/hw/gralloc.hi6210sft.so:system/lib64/hw/gralloc.hi6210sft.so \
+        $(LOCAL_PATH)/mali/lib64/libion.so:system/lib64/libion.so \
 
 PRODUCT_PACKAGES += \
 	gralloc.hi6210sft \
