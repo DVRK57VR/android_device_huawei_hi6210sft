@@ -16,6 +16,31 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/rootdir/etc/apns-conf.xml:system/etc/apns-conf.xml
 
+# Binaries
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/bin/agnsscontrol:system/bin/agnsscontrol \
+        $(LOCAL_PATH)/rootdir/bin/agnsslog:system/bin/agnsslog \
+        $(LOCAL_PATH)/rootdir/bin/akmd09911:system/bin/akmd09911 \
+        $(LOCAL_PATH)/rootdir/bin/atcmdserver:system/bin/atcmdserver \
+        $(LOCAL_PATH)/rootdir/bin/data_cleaner:system/bin/data_cleaner \
+        $(LOCAL_PATH)/rootdir/bin/device_monitor:system/bin/device_monitor \
+        $(LOCAL_PATH)/rootdir/bin/glgps:system/bin/glgps \
+        $(LOCAL_PATH)/rootdir/bin/gnss_engine:system/bin/gnss_engine \
+        $(LOCAL_PATH)/rootdir/bin/gpsdaemon:system/bin/gpsdaemon \
+        $(LOCAL_PATH)/rootdir/bin/hisi_connectivity.sh:system/bin/hisi_connectivity.sh \
+        $(LOCAL_PATH)/rootdir/bin/hostapd_cli_hisi:system/bin/hostapd_cli_hisi \
+        $(LOCAL_PATH)/rootdir/bin/hostapd_hisi:system/bin/hostapd_hisi \
+        $(LOCAL_PATH)/rootdir/bin/mac_addr_normalization:system/bin/mac_addr_normalization \
+        $(LOCAL_PATH)/rootdir/bin/modemlogcat_lte:system/bin/modemlogcat_lte \
+        $(LOCAL_PATH)/rootdir/bin/modem_resetinfo:system/bin/modem_resetinfo \
+        $(LOCAL_PATH)/rootdir/bin/oam_app:system/bin/oam_app \
+        $(LOCAL_PATH)/rootdir/bin/octty:system/bin/octty \
+        $(LOCAL_PATH)/rootdir/bin/preparesd.sh:system/bin/preparesd.sh \
+        $(LOCAL_PATH)/rootdir/bin/set_log:system/bin/set_log \
+        $(LOCAL_PATH)/rootdir/bin/start_110x_service.sh:system/bin/start_110x_service.sh \
+        $(LOCAL_PATH)/rootdir/bin/wpa_cli_hisi:system/bin/wpa_cli_hisi \
+        $(LOCAL_PATH)/rootdir/bin/wpa_supplicant_hisi:system/bin/wpa_supplicant_hisi \
+
 # Blobs
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 PRODUCT_RESTRICT_VENDOR_FILES := false
@@ -94,6 +119,11 @@ PRODUCT_COPY_FILES += \
 # Launcher
 PRODUCT_PACKAGES += \
  	Launcher3 \
+
+# modemConfig
+PRODUCT_COPY_FILES += \
+	$(call find-copy-subdir-files,*,device/huawei/hi6210sft/rootdir/etc/modemConfig/,system/etc/modemConfig) \
+        $(LOCAL_PATH)/rootdir/etc/android_panic.sh:system/etc/android_panic.sh \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
