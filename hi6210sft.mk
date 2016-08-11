@@ -24,6 +24,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
  	charger_res_images
 
+# Bluetooth
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/bluetooth/auto_pair_devlist.conf:system/etc/bluetoot/auto_pair_devlist.conf \
+        $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bluetoot/bt_did.conf \
+        $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bluetoot/bt_stack.conf \
+        $(LOCAL_PATH)/bluetooth/bt_stack_log.conf:system/etc/bluetoot/bt_stack_log.conf \
+        $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetoot/bt_vendor.conf \
+
+# Connectivity
+PRODUCT_COPY_FILES += \
+	$(call find-copy-subdir-files,*,device/huawei/hi6210sft/rootdir/vendor/firmware/,system/vendor/firmware)
+
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
@@ -103,10 +115,10 @@ PRODUCT_COPY_FILES += \
 
 # RIL
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/rootdir/lib/libbalong_audio_ril.so:system/lib/ \
+        $(LOCAL_PATH)/rootdir/lib/libbalong_audio_ril.so:system/lib/libbalong_audio_ril.so \
         $(LOCAL_PATH)/rootdir/lib/libbalong-ril.so:system/lib/libbalong-ril.so \
         $(LOCAL_PATH)/rootdir/lib/libbalong-ril-1.so:system/lib/libbalong-ril-1.so \
-        $(LOCAL_PATH)/rootdir/lib64/libbalong_audio_ril.so:system/lib64/ \
+        $(LOCAL_PATH)/rootdir/lib64/libbalong_audio_ril.so:system/lib64/libbalong_audio_ril.so \
         $(LOCAL_PATH)/rootdir/lib64/libbalong-ril.so:system/lib64/libbalong-ril.so \
         $(LOCAL_PATH)/rootdir/lib64/libbalong-ril-1.so:system/lib64/libbalong-ril-1.so \
 
