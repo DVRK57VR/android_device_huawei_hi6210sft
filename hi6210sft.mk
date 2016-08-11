@@ -200,12 +200,6 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/ramdisk/init.protocol.rc:root/init.protocol.rc \
         $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
         $(LOCAL_PATH)/ramdisk/init.tee.rc:root/init.tee.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.5801.rc:root/ueventd.5801.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.6165.rc:root/ueventd.6165.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.10106.rc:root/ueventd.10106.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.51054.rc:root/ueventd.51054.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.102173.rc:root/ueventd.102173.rc \
-        $(LOCAL_PATH)/ramdisk/ueventd.142782.rc:root/ueventd.142782.rc \
         $(LOCAL_PATH)/ramdisk/ueventd.hi6210sft.rc:root/ueventd.hi6210sft.rc \
 
 PRODUCT_COPY_FILES += \

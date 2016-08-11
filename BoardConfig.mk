@@ -97,6 +97,14 @@ TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 # RIL
 BOARD_RIL_CLASS := ../../../device/huawei/hi6210sft/ril/
 
+# Selinux
+BOARD_SEPOLICY_DIRS += \
+    	device/huawei/hi6210sft/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    	file_contexts \
+    	installd.te
+
 # UserIMAGES
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_HISI_DTIMAGE := true

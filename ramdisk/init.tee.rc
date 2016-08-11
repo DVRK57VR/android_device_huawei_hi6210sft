@@ -8,4 +8,4 @@ service teecd /sbin/teecd
     class main
     user root
     group root
-    seclabel u:r:teecd:s0
+    seclabel u:r:tee:s0

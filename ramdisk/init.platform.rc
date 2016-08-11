@@ -64,14 +64,15 @@ on property:vold.decrypt=trigger_reset_main
 on property:vold.decrypt=trigger_restart_min_framework
     start teecd
     class_start main
-    
+
 on property:vold.decrypt=trigger_restart_framework
     class_start main
     class_start late_start
-    trigger restart-sdcardfs
     setprop rild.rild1_ready_to_start ${rild.rild1_ready_to_start}
     start gpsdaemon
-    exec /system/bin/start_110x_service.sh
+    exec_ev /system/bin/start_110x_service.sh
+    write /proc/wifi_enable/wifi_start 1
+    write /proc/oam_enable/oam_start 1
 
 on property:vold.decrypt=trigger_default_encryption
     start surfaceflinger
@@ -102,11 +103,10 @@ service fuse_sdcard1rw /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/sdcard1 
    class late_start
    disabled
 
-service preparesdservice /system/bin/sh /system/bin/preparesd.sh
+service preparesdservice /system/bin/vdc volume storagetosd
    class main
    disabled
    oneshot
-   seclabel u:r:preparesd:s0
 
 on property:persist.sys.primarysd=*
    start preparesdservice

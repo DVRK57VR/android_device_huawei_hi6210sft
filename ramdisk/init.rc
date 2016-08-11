@@ -564,11 +564,6 @@ service pre-recovery /system/bin/uncrypt
     disabled
     oneshot
 
-service enable_swap /system/bin/enable_swap
-    class main
-    user root
-    group root
-    oneshot
 service hwnffserver /system/bin/hwnffserver
     class main
     socket hwnff stream 0660 root mount

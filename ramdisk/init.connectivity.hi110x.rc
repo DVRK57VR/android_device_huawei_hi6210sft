@@ -66,6 +66,8 @@ on property:ro.debuggable=*
     start hisi_bfg
 
 on property:init.svc.hisi_bfg=stopped
+    write /proc/wifi_enable/wifi_start 1
+    write /proc/oam_enable/oam_start 1
     start oam_app
     start chr_logd
     start hsgnss

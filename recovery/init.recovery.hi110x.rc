@@ -17,3 +17,6 @@ service hisi_bfg_rec /system/bin/hisi_connectivity.sh recovery
     class server
     user root
     oneshot
+on property:init.svc.hisi_bfg_rec=stopped
+    write /proc/wifi_enable/wifi_start 1
+    write /proc/oam_enable/oam_start 1
