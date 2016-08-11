@@ -45,6 +45,14 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+# Bluetooth
+#PRODUCT_COPY_FILES += \
+#        $(LOCAL_PATH)/bluetooth/auto_pair_devlist.conf:system/etc/bluetoot/auto_pair_devlist.conf \
+#        $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bluetoot/bt_did.conf \
+#        $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bluetoot/bt_stack.conf \
+#        $(LOCAL_PATH)/bluetooth/bt_stack_log.conf:system/etc/bluetoot/bt_stack_log.conf \
+#        $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetoot/bt_vendor.conf \
+
 # Boot
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/rootdir/isp.bin:system/isp.bin \
@@ -54,14 +62,6 @@ PRODUCT_COPY_FILES += \
 # Charger
 PRODUCT_PACKAGES += \
  	charger_res_images
-
-# Bluetooth
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/bluetooth/auto_pair_devlist.conf:system/etc/bluetoot/auto_pair_devlist.conf \
-        $(LOCAL_PATH)/bluetooth/bt_did.conf:system/etc/bluetoot/bt_did.conf \
-        $(LOCAL_PATH)/bluetooth/bt_stack.conf:system/etc/bluetoot/bt_stack.conf \
-        $(LOCAL_PATH)/bluetooth/bt_stack_log.conf:system/etc/bluetoot/bt_stack_log.conf \
-        $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetoot/bt_vendor.conf \
 
 # Connectivity
 PRODUCT_COPY_FILES += \
