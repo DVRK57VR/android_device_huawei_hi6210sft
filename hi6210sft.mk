@@ -16,31 +16,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/rootdir/etc/apns-conf.xml:system/etc/apns-conf.xml
 
-# Binaries
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/rootdir/bin/agnsscontrol:system/bin/agnsscontrol \
-        $(LOCAL_PATH)/rootdir/bin/agnsslog:system/bin/agnsslog \
-        $(LOCAL_PATH)/rootdir/bin/akmd09911:system/bin/akmd09911 \
-        $(LOCAL_PATH)/rootdir/bin/atcmdserver:system/bin/atcmdserver \
-        $(LOCAL_PATH)/rootdir/bin/data_cleaner:system/bin/data_cleaner \
-        $(LOCAL_PATH)/rootdir/bin/device_monitor:system/bin/device_monitor \
-        $(LOCAL_PATH)/rootdir/bin/glgps:system/bin/glgps \
-        $(LOCAL_PATH)/rootdir/bin/gnss_engine:system/bin/gnss_engine \
-        $(LOCAL_PATH)/rootdir/bin/gpsdaemon:system/bin/gpsdaemon \
-        $(LOCAL_PATH)/rootdir/bin/hisi_connectivity.sh:system/bin/hisi_connectivity.sh \
-        $(LOCAL_PATH)/rootdir/bin/hostapd_cli_hisi:system/bin/hostapd_cli_hisi \
-        $(LOCAL_PATH)/rootdir/bin/hostapd_hisi:system/bin/hostapd_hisi \
-        $(LOCAL_PATH)/rootdir/bin/mac_addr_normalization:system/bin/mac_addr_normalization \
-        $(LOCAL_PATH)/rootdir/bin/modemlogcat_lte:system/bin/modemlogcat_lte \
-        $(LOCAL_PATH)/rootdir/bin/modem_resetinfo:system/bin/modem_resetinfo \
-        $(LOCAL_PATH)/rootdir/bin/oam_app:system/bin/oam_app \
-        $(LOCAL_PATH)/rootdir/bin/octty:system/bin/octty \
-        $(LOCAL_PATH)/rootdir/bin/preparesd.sh:system/bin/preparesd.sh \
-        $(LOCAL_PATH)/rootdir/bin/set_log:system/bin/set_log \
-        $(LOCAL_PATH)/rootdir/bin/start_110x_service.sh:system/bin/start_110x_service.sh \
-        $(LOCAL_PATH)/rootdir/bin/wpa_cli_hisi:system/bin/wpa_cli_hisi \
-        $(LOCAL_PATH)/rootdir/bin/wpa_supplicant_hisi:system/bin/wpa_supplicant_hisi \
-
 # Blobs
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 PRODUCT_RESTRICT_VENDOR_FILES := false
@@ -53,19 +28,9 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 #        $(LOCAL_PATH)/bluetooth/bt_stack_log.conf:system/etc/bluetoot/bt_stack_log.conf \
 #        $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetoot/bt_vendor.conf \
 
-# Boot
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/rootdir/isp.bin:system/isp.bin \
-        $(LOCAL_PATH)/rootdir/ons.bin:system/ons.bin \
-        $(LOCAL_PATH)/rootdir/phone.prop:system/phone.prop \
-
 # Charger
 PRODUCT_PACKAGES += \
  	charger_res_images
-
-# Connectivity
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,device/huawei/hi6210sft/rootdir/vendor/firmware/,system/vendor/firmware)
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -120,11 +85,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
  	Launcher3 \
 
-# modemConfig
-PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,device/huawei/hi6210sft/rootdir/etc/modemConfig/,system/etc/modemConfig) \
-        $(LOCAL_PATH)/rootdir/etc/android_panic.sh:system/etc/android_panic.sh \
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
@@ -150,14 +110,6 @@ PRODUCT_COPY_FILES += \
     	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # RIL
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/rootdir/lib/libbalong_audio_ril.so:system/lib/libbalong_audio_ril.so \
-        $(LOCAL_PATH)/rootdir/lib/libbalong-ril.so:system/lib/libbalong-ril.so \
-        $(LOCAL_PATH)/rootdir/lib/libbalong-ril-1.so:system/lib/libbalong-ril-1.so \
-        $(LOCAL_PATH)/rootdir/lib64/libbalong_audio_ril.so:system/lib64/libbalong_audio_ril.so \
-        $(LOCAL_PATH)/rootdir/lib64/libbalong-ril.so:system/lib64/libbalong-ril.so \
-        $(LOCAL_PATH)/rootdir/lib64/libbalong-ril-1.so:system/lib64/libbalong-ril-1.so \
-
 PRODUCT_PROPERTY_OVERRIDES += \
     	audioril.lib=libbalong_audio_ril.so \
 	rild.libargs1=-m modem0 \
