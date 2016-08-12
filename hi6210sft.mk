@@ -139,9 +139,6 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/recovery/init.recovery.hi110x.rc:root/init.recovery.hi110x.rc \
         $(LOCAL_PATH)/recovery/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc
 
-# Wifi
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4343s/device-bcm.mk)
-
 # Zygote
 ADDITIONAL_DEFAULT_PROPERTIES += \
 	ro.zygote=zygote64_32
