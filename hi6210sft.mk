@@ -25,7 +25,6 @@ PRODUCT_PACKAGES += \
         audio.a2dp.default \
 	audio_policy.stub \
 	audio.primary.default \
-        audio.primary.hi6210sft \
 	audio.r_submix.default \
 	audio.usb.default \
 	libaudioutils \

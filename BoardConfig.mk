@@ -17,8 +17,8 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
 
 # Audio
-BOARD_USES_ALSA_AUDIO := true
-BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_ALSA_AUDIO := false
+BOARD_USES_GENERIC_AUDIO := true
 
 # Bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/huawei/hi6210sft/bluetooth/vnd_hi6210sft.txt
