@@ -189,6 +189,12 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/recovery/init.recovery.hi6210sft.rc:root/init.recovery.hi6210sft.rc
 
 # WIFI
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/etc/wifi/hostapd_hisi.conf:system/etc/wifi/hostapd_hisi.conf \
+        $(LOCAL_PATH)/rootdir/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+        $(LOCAL_PATH)/rootdir/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+        $(LOCAL_PATH)/rootdir/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+
 PRODUCT_PROPERTY_OVERRIDES += \
     	wifi.interface=wlan0 \
     	wifi.supplicant_scan_interval=15

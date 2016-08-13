@@ -171,3 +171,4 @@ on property:bluetooth.log.file.create=true
    chmod 775 /data/hwzd_logs/bt
 
    setprop bluetooth.log.file.create false
+
