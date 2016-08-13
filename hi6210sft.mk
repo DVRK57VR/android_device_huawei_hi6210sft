@@ -16,6 +16,26 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/rootdir/etc/apns-conf.xml:system/etc/apns-conf.xml
 
+# Audio
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/etc/audio_effects.conf:system/etc/audio_effects.conf \
+        $(LOCAL_PATH)/rootdir/etc/audio_policy.conf:system/etc/audio_policy.conf
+
+PRODUCT_PACKAGES += \
+        audio.a2dp.default \
+	audio_policy.stub \
+	audio.primary.default \
+        audio.primary.hi6210sft \
+	audio.r_submix.default \
+	audio.usb.default \
+	libaudioutils \
+	libtinyalsa \
+	sound_trigger.primary.hi6210sft \
+	tinycap \
+	tinymix \
+	tinypcminfo \
+	tinyplay
+
 # Blobs
 $(call inherit-product-if-exists, vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 PRODUCT_RESTRICT_VENDOR_FILES := false
@@ -23,6 +43,15 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 # Charger
 PRODUCT_PACKAGES += \
  	charger_res_images
+
+# Codecs
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/rootdir/etc/hisi_omx.cfg:system/etc/hisi_omx.cfg \
+        $(LOCAL_PATH)/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml \
+        $(LOCAL_PATH)/rootdir/etc/media_profiles.xml:system/etc/media_profiles.xml \
+        frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+        frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml.xml \
+        frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml.xml
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
@@ -82,6 +111,7 @@ DEVICE_PACKAGE_OVERLAYS += device/huawei/hi6210sft/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     	frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     	frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
