@@ -24,8 +24,8 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Audio
-BOARD_USES_ALSA_AUDIO := false
-BOARD_USES_GENERIC_AUDIO := true
+BOARD_USES_ALSA_AUDIO := true
+BOARD_USES_GENERIC_AUDIO := false
 
 # Bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/huawei/hi6210sft/bluetooth/vnd_hi6210sft.txt
@@ -51,9 +51,6 @@ TARGET_NO_BOOTLOADER := true
 
 # Camera
 USE_CAMERA_STUB := true
-
-# Chromium
-PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
 # Display
 TARGET_USE_PAN_DISPLAY := true
@@ -111,13 +108,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 BOARD_RIL_CLASS := ../../../device/huawei/hi6210sft/ril/
 
 # Selinux
-BOARD_SEPOLICY_DIRS += \
-    	device/huawei/hi6210sft/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    	file_contexts \
-	healthd.te \
-    	installd.te
+BOARD_SEPOLICY_DIRS += device/huawei/hi6210sft/sepolicy
 
 # UserIMAGES
 TARGET_USERIMAGES_USE_EXT4 := true
